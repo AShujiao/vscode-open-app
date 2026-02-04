@@ -112,6 +112,15 @@
       ]
     }
   },
+  "bugs": {
+    "url": "https://github.com/AShujiao/scode-open-app/issues",
+    "email": "a916817706@live.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/AShujiao/scode-open-app.git"
+  },
+  "homepage": "https://github.com/AShujiao/scode-open-app/blob/master/README.md#manasxx-readme",
   "scripts": {
     "vscode:prepublish": "npm run compile",
     "compile": "tsc -p ./",
