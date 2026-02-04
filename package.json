@@ -1,0 +1,135 @@
+{
+  "name": "vscode-open-app",
+  "displayName": "Open App (Windows)",
+  "description": "在 VS Code 侧边栏中快速打开 Windows 桌面应用程序 (仅支持 Windows)",
+  "version": "0.0.5",
+  "publisher": "manasxx",
+  "engines": {
+    "vscode": "^1.85.0"
+  },
+  "os": [
+    "win32"
+  ],
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [],
+  "main": "./out/extension.js",
+  "contributes": {
+    "viewsContainers": {
+      "activitybar": [
+        {
+          "id": "open-app",
+          "title": "Open App",
+          "icon": "resources/icons/app.svg"
+        }
+      ]
+    },
+    "views": {
+      "open-app": [
+        {
+          "id": "appList",
+          "name": "应用列表"
+        }
+      ]
+    },
+    "commands": [
+      {
+        "command": "open-app.addApp",
+        "title": "添加应用",
+        "icon": "$(add)"
+      },
+      {
+        "command": "open-app.removeApp",
+        "title": "删除应用",
+        "icon": "$(trash)"
+      },
+      {
+        "command": "open-app.openApp",
+        "title": "打开应用",
+        "icon": "$(play)"
+      },
+      {
+        "command": "open-app.refreshList",
+        "title": "刷新列表",
+        "icon": "$(refresh)"
+      },
+      {
+        "command": "open-app.importApps",
+        "title": "自动导入应用",
+        "icon": "$(cloud-download)"
+      },
+      {
+        "command": "open-app.editApp",
+        "title": "编辑应用",
+        "icon": "$(edit)"
+      },
+      {
+        "command": "open-app.clearApps",
+        "title": "清空应用",
+        "icon": "$(clear-all)"
+      }
+    ],
+    "menus": {
+      "view/title": [
+        {
+          "command": "open-app.addApp",
+          "when": "view == appList",
+          "group": "navigation"
+        },
+        {
+          "command": "open-app.importApps",
+          "when": "view == appList",
+          "group": "navigation"
+        },
+        {
+          "command": "open-app.refreshList",
+          "when": "view == appList",
+          "group": "navigation"
+        },
+        {
+          "command": "open-app.clearApps",
+          "when": "view == appList",
+          "group": "navigation"
+        }
+      ],
+      "view/item/context": [
+        {
+          "command": "open-app.openApp",
+          "when": "view == appList",
+          "group": "inline"
+        },
+        {
+          "command": "open-app.editApp",
+          "when": "view == appList",
+          "group": "1_modify"
+        },
+        {
+          "command": "open-app.removeApp",
+          "when": "view == appList",
+          "group": "2_remove"
+        }
+      ]
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "lint": "eslint src --ext ts"
+  },
+  "optionalDependencies": {
+    "node-window-manager": "^2.2.4"
+  },
+  "devDependencies": {
+    "@types/node": "^20.10.0",
+    "@types/vscode": "^1.85.0",
+    "@typescript-eslint/eslint-plugin": "^6.13.0",
+    "@typescript-eslint/parser": "^6.13.0",
+    "eslint": "^8.54.0",
+    "typescript": "^5.3.0"
+  },
+  "dependencies": {
+    "koffi": "^2.15.1"
+  }
+}
