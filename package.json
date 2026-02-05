@@ -2,7 +2,7 @@
   "name": "vscode-open-app",
   "displayName": "Open App (Windows)",
   "description": "在 VS Code 侧边栏中快速打开 Windows 桌面应用程序 (仅支持 Windows)",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "publisher": "manasxx",
   "engines": {
     "vscode": "^1.85.0"
@@ -13,6 +13,18 @@
   ],
   "categories": [
     "Other"
+  ],
+  "keywords": [
+    "openapp",
+    "windows",
+    "application",
+    "快捷方式",
+    "应用程序",
+    "桌面应用",
+    "open app",
+    "app launcher",
+    "任务管理器",
+    "window manager"
   ],
   "activationEvents": [],
   "main": "./out/extension.js",
