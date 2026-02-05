@@ -35,8 +35,17 @@ export class AppTreeProvider implements vscode.TreeDataProvider<AppTreeItem> {
 
   getChildren(): Thenable<AppTreeItem[]> {
     const apps = this.appManager.getApps();
+    
     return Promise.resolve(
-      apps.map(app => new AppTreeItem(app, vscode.TreeItemCollapsibleState.None))
+      apps.map(app => {
+        const item = new AppTreeItem(app, vscode.TreeItemCollapsibleState.None);
+        if (app.icon) {
+          item.iconPath = vscode.Uri.file(app.icon);
+        } else {
+          item.iconPath = new vscode.ThemeIcon('window');
+        }
+        return item;
+      })
     );
   }
 }

@@ -2,7 +2,7 @@
   "name": "vscode-open-app",
   "displayName": "Open App (Windows)",
   "description": "在 VS Code 侧边栏中快速打开 Windows 桌面应用程序 (仅支持 Windows)",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "publisher": "manasxx",
   "engines": {
     "vscode": "^1.85.0"
@@ -31,6 +31,10 @@
         {
           "id": "appList",
           "name": "应用列表"
+        },
+        {
+          "id": "windowList",
+          "name": "运行窗口"
         }
       ]
     },
@@ -51,8 +55,18 @@
         "icon": "$(play)"
       },
       {
+        "command": "open-app.switchWindow",
+        "title": "切换窗口",
+        "icon": "$(window)"
+      },
+      {
         "command": "open-app.refreshList",
-        "title": "刷新列表",
+        "title": "刷新",
+        "icon": "$(refresh)"
+      },
+      {
+        "command": "open-app.refreshWindowList",
+        "title": "刷新窗口",
         "icon": "$(refresh)"
       },
       {
@@ -92,6 +106,11 @@
           "command": "open-app.clearApps",
           "when": "view == appList",
           "group": "navigation"
+        },
+        {
+          "command": "open-app.refreshWindowList",
+          "when": "view == windowList",
+          "group": "navigation"
         }
       ],
       "view/item/context": [
@@ -109,19 +128,24 @@
           "command": "open-app.removeApp",
           "when": "view == appList",
           "group": "2_remove"
+        },
+        {
+          "command": "open-app.switchWindow",
+          "when": "view == windowList",
+          "group": "inline"
         }
       ]
     }
   },
   "bugs": {
-    "url": "https://github.com/AShujiao/scode-open-app/issues",
+    "url": "https://github.com/AShujiao/vscode-open-app/issues",
     "email": "a916817706@live.com"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/AShujiao/scode-open-app.git"
+    "url": "https://github.com/AShujiao/vscode-open-app.git"
   },
-  "homepage": "https://github.com/AShujiao/scode-open-app/blob/master/README.md#manasxx-readme",
+  "homepage": "https://github.com/AShujiao/vscode-open-app/blob/master/README.md#manasxx-readme",
   "scripts": {
     "vscode:prepublish": "npm run compile",
     "compile": "tsc -p ./",
