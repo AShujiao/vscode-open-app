@@ -15,13 +15,18 @@ Pin commonly used development tools, external software, or scripts to the VS Cod
 *   **Smart Import**: One-click scan of desktop shortcuts and Start Menu to batch import common software.
 *   **Easy Management**: Supports renaming, deleting, clearing lists, with automatic configuration persistence.
 
-### 2. Window Switcher `NEW`
+### 2. Window Switcher
 View and switch currently running Windows windows directly inside VS Code, eliminating the need for `Alt+Tab`.
 
 *   **Real-time List**: Retrieves all active application windows on the current desktop.
 *   **One-click Switch**: Click a list item to immediately bring the target window to the front and activate it.
 *   **Smart Filtering**: Automatically filters background processes and tool windows, showing only meaningful main windows.
 *   **Multilingual Support**: Perfectly displays localized window titles.
+
+### 3. Preview
+![preview](./resources/readme/01.png)
+![preview](./resources/readme/02.png)
+
 
 ## 📋 System Requirements
 

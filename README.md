@@ -23,6 +23,11 @@
 *   **智能过滤**: 自动过滤后台进程和工具窗口，只展示有意义的主窗口。
 *   **中文支持**: 完美支持中文窗口标题显示。
 
+### 3. 预览
+![preview](./resources/readme/01.png)
+![preview](./resources/readme/02.png)
+
+
 ## 📋 系统要求
 
 *   **操作系统**: Windows 10 / 11 (仅支持 Windows 平台)
